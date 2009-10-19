@@ -1,0 +1,18 @@
+# color
+Mrxvt.background:black
+Mrxvt.foreground:white
+
+# Font
+Mrxvt.xft:True
+Mrxvt.xftAntialias:True
+Mrxvt.xftFont:"Dejavu Sans Mono"
+Mrxvt.xftSize:14
+
+# Tabs
+Mrxvt.autohideTabbar:True
+
+# Scrollbar
+Mrxvt.scrollBar:False
+
+# Menubar
+Mrxvt.showMenu:False
