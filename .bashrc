@@ -21,12 +21,12 @@ alias acs="apt-cache search"
 alias acsh="apt-cache show"
 
 # hostings
-export NANO="192.168.1.28"
+export linux="192.168.1.80"
 export ZD="163.26.225.8"
 export SL400="192.168.1.26"
 alias zd='ssh a2n@${ZD}'
 alias sl400='ssh a2n@${SL400}'
-alias nano='ssh a2n@${NANO}'
+alias linux='ssh a2n@192.168.1.80'
 alias tunnel='ssh -fNCD 29999 a2n@163.26.225.8'
 
 # utilities
