@@ -29,9 +29,20 @@ alias e='epdfview &> /dev/null &'
 alias gcc='gcc -Wall -g'
 alias g++='g++ -Wall -g'
 alias g='grep -in --color=auto -H'
-alias gr='grep -r -in --color=auto -H'
 alias info='info --vi-keys'
 alias sd='sdcv'
 alias df='df -h'
 alias 528='iconv -f big5 -t utf8'
 alias wget-m='wget -nd -np -p -k -m'
+
+# @fn function gr()
+# @brief grep recursive with extension or not.
+# @return colorful grep result.
+function gr()
+{
+    if [ -z $2 ]; then
+	find . -type f -print0 | xargs -0 grep -in --color=auto -H $1
+    else
+	find . -type f -iname $2 -print0 | xargs -0 grep -in --color=auto -H $1
+    fi
+}
