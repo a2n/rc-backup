@@ -1,5 +1,5 @@
 #!/bin/bash
-# Last update, Mon Apr 11 21:49:44 CST 2011
+# Last update, Tue Aug  2 13:47:32 CST 2011
 
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
@@ -8,7 +8,6 @@ export LC_ALL="zh_TW.UTF-8"
 export LANG="zh_TW.UTF-8"
 export LC_CTYPE="zh_TW.UTF-8"
 export PAGER="less"
-export DISPLAY=":0.0"
 export LS_COLORS="di=01;36"
 export EDITOR="vim"
 
@@ -24,12 +23,10 @@ alias acsh="apt-cache show"
 alias ll='ls -lha'
 alias t='tmux attach -d'
 alias a='axel -a -n 10'
-alias e='epdfview &> /dev/null &'
 alias gcc='gcc -Wall -g'
 alias g++='g++ -Wall -g'
 alias g='grep -in --color=auto -H'
 alias info='info --vi-keys'
-alias sd='sdcv'
 alias df='df -h'
 alias 528='iconv -f big5 -t utf8'
 alias wget-m='wget -nd -np -p -k -m'
