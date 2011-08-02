@@ -4,7 +4,7 @@
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
 export TZ="Asia/Taipei"
-export LC_ALL="C"
+export LC_ALL="zh_TW.UTF-8"
 export LANG="zh_TW.UTF-8"
 export LC_CTYPE="zh_TW.UTF-8"
 export PAGER="less"
