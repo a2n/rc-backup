@@ -8,7 +8,6 @@ export LC_ALL="zh_TW.UTF-8"
 export LANG="zh_TW.UTF-8"
 export LC_CTYPE="zh_TW.UTF-8"
 export PAGER="less"
-export LS_COLORS="di=01;36"
 export EDITOR="vim"
 
 # apt-{get, cache}
@@ -30,12 +29,16 @@ alias info='info --vi-keys'
 alias df='df -h'
 alias 528='iconv -f big5 -t utf8'
 alias wget-m='wget -nd -np -p -k -m'
+alias 28='ssh alan@rd.28int.com -p 2828'
 
 # mac detection
 if [ `uname -s` == "Darwin" ]; then
     alias ls='ls -G'
+    alias top='top -o -mregion -O -cpu'
+    export LSCOLORS="exfxcxdxbxegedabagacad"
 else
     alias ls='ls --color=auto'
+    export LS_COLORS="di=01;36"
 fi
 
 # @fn function gr()
