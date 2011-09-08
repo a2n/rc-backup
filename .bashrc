@@ -1,5 +1,5 @@
 #!/bin/bash
-# Last update, Tue Aug  2 13:47:32 CST 2011
+# Last update, Thu Sep  8 13:35:17 CST 2011
 
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
@@ -24,7 +24,7 @@ alias t='tmux attach -d'
 alias a='axel -a -n 10'
 alias gcc='gcc -Wall -g'
 alias g++='g++ -Wall -g'
-alias g='grep -in --color=auto -H'
+alias g='grep -EHin --color=auto'
 alias info='info --vi-keys'
 alias df='df -h'
 alias 528='iconv -f big5 -t utf8'
@@ -34,7 +34,7 @@ alias 28='ssh alan@rd.28int.com -p 2828'
 # mac detection
 if [ `uname -s` == "Darwin" ]; then
     alias ls='ls -G'
-    alias top='top -o -mregion -O -cpu'
+    alias top='top -o -vsize -O -cpu'
     export LSCOLORS="exfxcxdxbxegedabagacad"
 else
     alias ls='ls --color=auto'
