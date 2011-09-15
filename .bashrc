@@ -33,15 +33,15 @@ if [ `uname -s` == "Darwin" ]; then
     alias ls='ls -G'
     alias top='top -o -vsize -O -cpu'
     export LSCOLORS="exfxcxdxbxegedabagacad"
-    export LC_ALL="C"
-    export LANG="C"
-    export LC_CTYPE="C"
-else
-    alias ls='ls --color=auto'
-    export LS_COLORS="di=01;36"
     export LC_ALL="zh_TW.UTF-8"
     export LANG="zh_TW.UTF-8"
     export LC_CTYPE="zh_TW.UTF-8"
+else
+    alias ls='ls --color=auto'
+    export LS_COLORS="di=01;36"
+    export LC_ALL="C"
+    export LANG="C"
+    export LC_CTYPE="C"
 fi
 
 # @fn function gr()
