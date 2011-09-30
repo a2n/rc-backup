@@ -1,5 +1,5 @@
 #!/bin/bash
-# Last update, Thu Sep 15 11:19:14 CST 2011
+# Last update, Fri Sep 30 14:06:26 CST 2011
 
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
@@ -26,7 +26,6 @@ alias info='info --vi-keys'
 alias df='df -h'
 alias 528='iconv -f big5 -t utf8'
 alias wget-m='wget -nd -np -p -k -m'
-alias 28='ssh alan@rd.28int.com -p 2828'
 
 # mac detection
 if [ `uname -s` == "Darwin" ]; then
@@ -53,5 +52,17 @@ function gr()
 	find . -type f -print0 | xargs -0 grep -in --color=auto -H $1
     else
 	find . -type f -iname $2 -print0 | xargs -0 grep -in --color=auto -H $1
+    fi
+}
+
+# @fn function 28()
+# @brief SSH to server.
+# @ return Establishing a ssh connection.
+function rd()
+{
+    ssh -p 2828 alan@192.168.1.22
+    # $? represents the return value.
+    if [ $? = 255 ]; then
+	ssh -p 2828 alan@rd.28int.com
     fi
 }
