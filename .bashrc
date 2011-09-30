@@ -4,7 +4,7 @@
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
 export TZ="Asia/Taipei"
-export PAGER="less"
+export PAGER="less -XF"
 export EDITOR="vim"
 
 # apt-{get, cache}
