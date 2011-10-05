@@ -1,5 +1,5 @@
 #!/bin/bash
-# Last update, Fri Sep 30 14:06:26 CST 2011
+# Last update, Wed Oct  5 17:12:55 CST 2011
 
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
@@ -26,6 +26,7 @@ alias info='info --vi-keys'
 alias df='df -h'
 alias 528='iconv -f big5 -t utf8'
 alias wget-m='wget -nd -np -p -k -m'
+alias less="less -XF"
 
 # mac detection
 if [ `uname -s` == "Darwin" ]; then
