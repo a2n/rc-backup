@@ -4,7 +4,7 @@
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
 export TZ="Asia/Taipei"
-export PAGER="less -XF"
+export PAGER="less -iXF"
 export EDITOR="vim"
 
 # apt-{get, cache}
@@ -26,7 +26,7 @@ alias info='info --vi-keys'
 alias df='df -h'
 alias 528='iconv -f big5 -t utf8'
 alias wget-m='wget -nd -np -p -k -m'
-alias less="less -XF"
+alias less="less -iXF"
 
 # mac detection
 if [ `uname -s` == "Darwin" ]; then
