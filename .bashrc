@@ -27,7 +27,7 @@ alias df='df -h'
 alias 528='iconv -f big5 -t utf8'
 alias wget-m='wget -nd -np -p -k -m'
 alias less="less -iXF"
-alias ns="echo -n Network sessions: && netstat -np tcp | grep [1-9] | awk '{ print $5 }' | wc -l"
+alias ns="echo -n TCP sessions: && netstat -np tcp | grep [1-9] | awk '{ print $5 }' | wc -l"
 
 # mac detection
 if [ `uname -s` == "Darwin" ]; then
