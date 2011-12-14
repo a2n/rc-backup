@@ -21,13 +21,12 @@ alias t='tmux attach -d'
 alias a='axel -a -n 10'
 alias gcc='gcc -Wall -g'
 alias g++='g++ -Wall -g'
-alias g='grep -EHin --color=auto'
+alias g='grep -mmap -EHin --color=auto'
 alias info='info --vi-keys'
 alias df='df -h'
 alias 528='iconv -f big5 -t utf8'
 alias wget-m='wget -nd -np -p -k -m'
 alias less="less -iXF"
-alias ns="echo -n TCP sessions: && netstat -np tcp | grep [1-9] | awk '{ print $5 }' | wc -l"
 
 # mac detection
 if [ `uname -s` == "Darwin" ]; then
@@ -51,9 +50,9 @@ fi
 function gr()
 {
     if [ -z $2 ]; then
-	find . -type f -print0 | xargs -0 grep -in --color=auto -H $1
+	find . -type f -print0 | xargs -0 grep --mmap -in --color=auto -H $1
     else
-	find . -type f -iname $2 -print0 | xargs -0 grep -in --color=auto -H $1
+	find . -type f -iname $2 -print0 | xargs -0 grep --mmap -in --color=auto -H $1
     fi
 }
 
@@ -67,4 +66,16 @@ function rd()
     if [ $? = 255 ]; then
 	ssh -p 2828 alan@rd.28int.com
     fi
+}
+
+# @fn function ns()
+# @brief Show all tcp established connection, exclude 127.0.0.1.
+function ns()
+{
+    echo -n tcp sessions: 
+    netstat -nf inet -p tcp |
+    grep -e "ESTABLISHED" |
+    grep -v "127.0.0.1" |
+    awk '{ print $6 }' |
+    wc -l
 }
