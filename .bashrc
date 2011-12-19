@@ -28,6 +28,9 @@ alias 528='iconv -f big5 -t utf8'
 alias wget-m='wget -nd -np -p -k -m'
 alias less="less -iXF"
 
+# bashrc secret
+. ~/.bashrc_secret
+
 # mac detection
 if [ `uname -s` == "Darwin" ]; then
     alias ls='ls -G'
