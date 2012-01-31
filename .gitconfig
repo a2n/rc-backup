@@ -11,4 +11,3 @@
 	trustExitCode = true
 [alias]
 [alias]
-	dry-run = commit --dry-run --short
