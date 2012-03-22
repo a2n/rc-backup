@@ -1,6 +1,4 @@
 :syntax on
-set bg=dark
-colo darkblue
 set si
 set sw=4
 set sts=4
@@ -17,3 +15,6 @@ filetype on
 filetype plugin on
 
 nn <silent> <F8> :TlistToggle<CR>
+let Tlist_Sort_Type = "name"
+let mapleader=","
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
