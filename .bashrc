@@ -24,23 +24,31 @@ alias g++='g++ -Wall -g'
 alias g='grep -mmap -EHin --color=auto'
 alias info='info --vi-keys'
 alias df='df -h'
-alias 528='iconv -f big5 -t utf8'
 alias wget-m='wget -nd -np -p -k -m'
 alias less="less -iXF"
 
+# code hacking
+alias chromium="cd /Users/a2n/labs/chromium/src/chromium"
+
 # bashrc secret
-. ~/.bashrc_secret
+if [ -z ~/.bashrc_secret ]; then
+    . ~/.bashrc_secret
+else
+    echo .bashrc_secret does not exist.
+fi
 
 # mac detection
 if [ `uname -s` == "Darwin" ]; then
     alias ls='ls -G'
     alias top='top -o -vsize -O -cpu'
+    alias 528='iconv -f BIG-5 -t UTF-8'
     export LSCOLORS="exfxcxdxbxegedabagacad"
     export LC_ALL="zh_TW.UTF-8"
     export LANG="zh_TW.UTF-8"
     export LC_CTYPE="zh_TW.UTF-8"
 else
     alias ls='ls --color=auto'
+    alias 528='iconv -f big5 -t utf8'
     export LS_COLORS="di=01;36"
     export LC_ALL="C"
     export LANG="C"
@@ -56,18 +64,6 @@ function gr()
 	find . -type f -print0 | xargs -0 grep --mmap -in --color=auto -H $1
     else
 	find . -type f -iname $2 -print0 | xargs -0 grep --mmap -in --color=auto -H $1
-    fi
-}
-
-# @fn function 28()
-# @brief SSH to server.
-# @ return Establishing a ssh connection.
-function rd()
-{
-    ssh -p 2828 alan@192.168.1.22
-    # $? represents the return value.
-    if [ $? = 255 ]; then
-	ssh -p 2828 alan@rd.28int.com
     fi
 }
 
