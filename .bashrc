@@ -31,10 +31,8 @@ alias less="less -iXF"
 alias chromium="cd /Users/a2n/labs/chromium/src/chromium"
 
 # bashrc secret
-if [ -z ~/.bashrc_secret ]; then
+if [ -r ~/.bashrc_secret ]; then
     . ~/.bashrc_secret
-else
-    echo .bashrc_secret does not exist.
 fi
 
 # mac detection
