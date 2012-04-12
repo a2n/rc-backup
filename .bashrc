@@ -61,7 +61,7 @@ function gr()
     if [ -z $2 ]; then
 	find . -type f -print0 | xargs -0 grep --mmap -in --color=auto -H $1
     else
-	find . -type f -iname $2 -print0 | xargs -0 grep --mmap -in --color=auto -H $1
+	find . -type f -iregex "$2" -print0 | xargs -0 grep --mmap -in --color=auto -H $1
     fi
 }
 
