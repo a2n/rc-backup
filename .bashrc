@@ -1,5 +1,5 @@
 #!/bin/bash
-# Last update, Wed Oct  5 17:12:55 CST 2011
+# Last update, Fri Apr 20 17:59:39 CST 2012
 
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
@@ -21,7 +21,7 @@ alias t='tmux attach -d'
 alias a='axel -a -n 10'
 alias gcc='gcc -Wall -g'
 alias g++='g++ -Wall -g'
-alias g='grep -mmap -EHin --color=auto'
+alias g='grep --mmap -EHin --color=auto'
 alias info='info --vi-keys'
 alias df='df -h'
 alias wget-m='wget -nd -np -p -k -m'
@@ -35,8 +35,14 @@ if [ -r ~/.bashrc_secret ]; then
     . ~/.bashrc_secret
 fi
 
-# mac detection
+# Platform dependency
 if [ `uname -s` == "Darwin" ]; then
+    MAXOS=true;
+else
+    MAXOS=false;
+fi
+
+if ($MAXOS); then
     alias ls='ls -G'
     alias top='top -o -vsize -O -cpu'
     alias 528='iconv -f BIG-5 -t UTF-8'
@@ -61,7 +67,7 @@ function gr()
     if [ -z $2 ]; then
 	find . -type f -print0 | xargs -0 grep --mmap -in --color=auto -H $1
     else
-	find . -type f -iregex "$2" -print0 | xargs -0 grep --mmap -in --color=auto -H $1
+	find . -type f -iname "$2" -print0 | xargs -0 grep --mmap -in --color=auto -H $1
     fi
 }
 
@@ -70,7 +76,12 @@ function gr()
 function ns()
 {
     echo -n tcp sessions: 
-    netstat -nf inet -p tcp |
+    if ($MAXOS); then
+	cmd="netstat -nf inet -p tcp"
+    else
+	cmd="netstat -n4"
+    fi
+    eval $cmd |
     grep -e "ESTABLISHED" |
     grep -v "127.0.0.1" |
     awk '{ print $6 }' |
