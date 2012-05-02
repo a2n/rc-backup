@@ -1,7 +1,7 @@
 chatnets = {
   Freenode = {
     type = "IRC";
-    autosendcmd = "/^msg NickServ identify PASSWORD;wait 1000";
+    autosendcmd = "/^msg NickServ identify testtest;wait 1000";
   };
 };
 
@@ -64,6 +64,7 @@ aliases = {
   UMODE = "mode $N";
   WC = "window close";
   WN = "window new hide";
+  WG = "window goto";
   SV = "say Irssi $J ($V) - http://irssi.org/";
   GOTO = "sb goto";
   CHAT = "dcc chat";
@@ -197,7 +198,7 @@ settings = {
     term_charset = "utf-8";
     autolog = "yes";
     autolog_colors = "yes";
-    theme = "elite";
+    theme = "default";
   };
 };
 logs = { };
