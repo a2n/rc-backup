@@ -34,6 +34,11 @@ if [ -r ~/.bashrc_secret ]; then
     . ~/.bashrc_secret
 fi
 
+# git completion
+if [ -r ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
+
 # Platform dependency
 if [ `uname -s` == "Darwin" ]; then
     MAXOS=true;
