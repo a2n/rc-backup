@@ -20,19 +20,24 @@ servers = (
 channels = (
   # Taiwan
   { name = "#pptaiwan"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#node.js-tw"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#osdc.tw"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#coscup"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#python.tw"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#haskell.tw"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#node.js-tw"; chatnet = "Freenode"; autojoin = "yes"; },
   # Non Taiwan
   { name = "#dart"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#go-nuts"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#facebook"; chatnet = "Freenode"; autojoin = "yes"; }
-  { name = "#test"; chatnet = "Freenode"; autojoin = "yes"; }
   # Fedora
   { name = "#fedora-ambassadors"; chatnet = "Freenode"; autojoin = "yes"; }
   { name = "#fedora-zh"; chatnet = "Freenode"; autojoin = "yes"; }
   { name = "#fedora"; chatnet = "Freenode"; autojoin = "yes"; }
+  # CyanogenMod
+  { name = "#cyanogenmod"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#cyanogenmod-dev"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#TeamHacksung-Support"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#TeamHacksung"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {
