@@ -18,25 +18,18 @@ alias acsh="apt-cache show"
 # utilities
 alias ll='ls -lha'
 alias t='tmux attach -d'
-alias a='axel -a -n 10'
 alias gcc='gcc -Wall -g'
 alias g++='g++ -Wall -g'
 alias info='info --vi-keys'
 alias df='df -h'
 alias wget-m='wget -nd -np -p -k -m'
 alias less="less -iXF"
-
-# code hacking
-alias chromium="cd /Users/a2n/labs/chromium/src/chromium"
+alias s="screen -DR"
+alias screen="screen -U"
 
 # bashrc secret
 if [ -r ~/.bashrc_secret ]; then
     . ~/.bashrc_secret
-fi
-
-# git completion
-if [ -r ~/.git-completion.bash ]; then
-    . ~/.git-completion.bash
 fi
 
 # Platform dependency
