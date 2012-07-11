@@ -18,13 +18,13 @@ alias acsh="apt-cache show"
 # utilities
 alias ll='ls -lha'
 alias t='tmux attach -d'
-alias a='axel -a -n 10'
 alias gcc='gcc -Wall -g'
 alias g++='g++ -Wall -g'
 alias info='info --vi-keys'
 alias df='df -h'
 alias wget-m='wget -nd -np -p -k -m'
 alias less="less -iXF"
+alias s="screen -DR"
 
 # code hacking
 alias chromium="cd /Users/a2n/labs/chromium/src/chromium"
@@ -48,8 +48,8 @@ fi
 
 if ($MAXOS); then
     alias g='grep --mmap -EHin --colour=auto'
+    alias top='top -o cpu'
     alias ls='ls -G'
-    alias top='top -o -vsize -O -cpu'
     alias 528='iconv -f BIG-5 -t UTF-8'
     export LSCOLORS="exfxcxdxbxegedabagacad"
     export LC_ALL="zh_TW.UTF-8"
@@ -57,6 +57,7 @@ if ($MAXOS); then
     export LC_CTYPE="zh_TW.UTF-8"
 else
     alias g='grep --mmap -EHin --color=auto'
+    alias top='top -o -vsize -O -cpu'
     alias ls='ls --color=auto'
     alias 528='iconv -f big5 -t utf8'
     export LS_COLORS="di=01;36"
