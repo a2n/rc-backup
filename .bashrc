@@ -41,15 +41,15 @@ fi
 
 # Platform dependency
 if [ `uname -s` == "Darwin" ]; then
-    MAXOS=true;
+    MACOS=true;
 else
-    MAXOS=false;
+    MACOS=false;
 fi
 
-if ($MAXOS); then
+if ($MACOS); then
     alias g='grep --mmap -EHin --colour=auto'
     alias top='top -o cpu'
-    alias ls='ls -G'
+    alias ls='ls -GF'
     alias 528='iconv -f BIG-5 -t UTF-8'
     export LSCOLORS="exfxcxdxbxegedabagacad"
     export LC_ALL="zh_TW.UTF-8"
@@ -83,7 +83,7 @@ function gr()
 function ns()
 {
     echo -n tcp sessions: 
-    if ($MAXOS); then
+    if ($MACOS); then
 	cmd="netstat -nf inet -p tcp"
     else
 	cmd="netstat -n4"
