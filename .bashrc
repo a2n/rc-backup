@@ -1,5 +1,5 @@
 #!/bin/bash
-# Last update, Fri Apr 20 17:59:39 CST 2012
+# Last update, 2012年 7月16日 周一 15時46分08秒 CST 
 
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
@@ -28,15 +28,11 @@ alias s="screen -DR"
 
 # code hacking
 alias chromium="cd /Users/a2n/labs/chromium/src/chromium"
+alias screen="screen -U"
 
 # bashrc secret
 if [ -r ~/.bashrc_secret ]; then
     . ~/.bashrc_secret
-fi
-
-# git completion
-if [ -r ~/.git-completion.bash ]; then
-    . ~/.git-completion.bash
 fi
 
 # Platform dependency
