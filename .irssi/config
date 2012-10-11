@@ -33,11 +33,15 @@ channels = (
   { name = "#fedora-ambassadors"; chatnet = "Freenode"; autojoin = "yes"; }
   { name = "#fedora-zh"; chatnet = "Freenode"; autojoin = "yes"; }
   { name = "#fedora"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#fedora-meeting"; chatnet = "Freenode"; autojoin = "yes"; }
   # CyanogenMod
   { name = "#cyanogenmod"; chatnet = "Freenode"; autojoin = "yes"; }
   { name = "#cyanogenmod-dev"; chatnet = "Freenode"; autojoin = "yes"; }
   { name = "#TeamHacksung-Support"; chatnet = "Freenode"; autojoin = "yes"; }
   { name = "#TeamHacksung"; chatnet = "Freenode"; autojoin = "yes"; }
+  # VirtualBox
+  { name = "#vbox"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#vbox-dev"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {
