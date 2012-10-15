@@ -7,14 +7,6 @@ export TZ="Asia/Taipei"
 export PAGER="less -iXF"
 export EDITOR="vim"
 
-# apt-{get, cache}
-alias agi="apt-get install"
-alias agu="apt-get update"
-alias agup="apt-get upgrade"
-alias agr='apt-get remove'
-alias acs="apt-cache search"
-alias acsh="apt-cache show"
-
 # utilities
 alias ll='ls -lha'
 alias t='tmux attach -d'
@@ -60,6 +52,14 @@ else
     export LC_ALL="C"
     export LANG="C"
     export LC_CTYPE="C"
+
+    # apt-{get, cache}
+    alias agi="apt-get install"
+    alias agu="apt-get update"
+    alias agup="apt-get upgrade"
+    alias agr='apt-get remove'
+    alias acs="apt-cache search"
+    alias acsh="apt-cache show"
 fi
 
 # @fn function gr()
