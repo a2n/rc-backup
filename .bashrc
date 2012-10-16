@@ -48,6 +48,7 @@ else
     alias top='top -o -vsize -O -cpu'
     alias ls='ls --color=auto'
     alias 528='iconv -f big5 -t utf8'
+    alias youtube-dl='youtube-dl -ct'
     export LS_COLORS="di=01;36"
     export LC_ALL="C"
     export LANG="C"
