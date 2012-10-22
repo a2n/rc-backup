@@ -1,11 +1,16 @@
 #!/bin/bash
-# Last update, 2012年 7月16日 周一 15時46分08秒 CST 
+# Last update, Fri Apr 20 17:59:39 CST 2012
+
+# Golang
+export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/go
 
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
 export TZ="Asia/Taipei"
 export PAGER="less -iXF"
 export EDITOR="vim"
+export PATH=$PATH:/Users/a2n/Downloads/android-sdk-macosx/platform-tools
 
 # apt-{get, cache}
 alias agi="apt-get install"
@@ -24,15 +29,20 @@ alias info='info --vi-keys'
 alias df='df -h'
 alias wget-m='wget -nd -np -p -k -m'
 alias less="less -iXF"
-alias s="screen -DR"
+alias s="screen -DRU"
+alias youtube-dl="youtube-dl -nt"
 
 # code hacking
 alias chromium="cd /Users/a2n/labs/chromium/src/chromium"
-alias screen="screen -U"
 
 # bashrc secret
 if [ -r ~/.bashrc_secret ]; then
     . ~/.bashrc_secret
+fi
+
+# git completion
+if [ -r ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
 fi
 
 # Platform dependency
@@ -89,4 +99,11 @@ function ns()
     grep -v "127.0.0.1" |
     awk '{ print $6 }' |
     wc -l
+}
+
+# @fn function length()
+# @brief Count string length
+function length()
+{
+    echo $1 | wc -m
 }
