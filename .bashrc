@@ -12,14 +12,6 @@ export PAGER="less -iXF"
 export EDITOR="vim"
 export PATH=$PATH:/Users/a2n/Downloads/android-sdk-macosx/platform-tools
 
-# apt-{get, cache}
-alias agi="apt-get install"
-alias agu="apt-get update"
-alias agup="apt-get upgrade"
-alias agr='apt-get remove'
-alias acs="apt-cache search"
-alias acsh="apt-cache show"
-
 # utilities
 alias ll='ls -lha'
 alias t='tmux attach -d'
@@ -66,10 +58,19 @@ else
     alias top='top -o -vsize -O -cpu'
     alias ls='ls --color=auto'
     alias 528='iconv -f big5 -t utf8'
+    alias youtube-dl='youtube-dl -ct'
     export LS_COLORS="di=01;36"
     export LC_ALL="C"
     export LANG="C"
     export LC_CTYPE="C"
+
+    # apt-{get, cache}
+    alias agi="apt-get install"
+    alias agu="apt-get update"
+    alias agup="apt-get upgrade"
+    alias agr='apt-get remove'
+    alias acs="apt-cache search"
+    alias acsh="apt-cache show"
 fi
 
 # @fn function gr()
