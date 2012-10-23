@@ -11,8 +11,7 @@ export TZ="Asia/Taipei"
 export PAGER="less -iXF"
 export EDITOR="vim"
 export LC_ALL="zh_TW.UTF-8"
-export LC_MESSAGE="C"
-export LANG="zh_TW.UTF-8"
+export LANGUAGE="C"
 
 # apt-{get, cache}
 alias agi="apt-get install"
