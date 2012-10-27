@@ -1,46 +1,37 @@
 #!/bin/bash
-# Last update, 2012年 7月16日 周一 15時46分08秒 CST 
+# Last update, 2012年10月27日 周六 16時54分48秒 CST
 
 # Golang
-export GOROOT=/home/a2n/opt/go
-export PATH=$PATH:$GOROOT/bin:/var/lib/gems/1.8/bin
+export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/go
 
 # Environment variables
 export PS1="\t:\h:\w\n\\$ "
 export TZ="Asia/Taipei"
 export PAGER="less -iXF"
 export EDITOR="vim"
-export LC_ALL="zh_TW.UTF-8"
-export LANGUAGE="C"
-
-# apt-{get, cache}
-alias agi="apt-get install"
-alias agu="apt-get update"
-alias agup="apt-get upgrade"
-alias agr='apt-get remove'
-alias acs="apt-cache search"
-alias acsh="apt-cache show"
 
 # utilities
-alias ll='ls -lha'
 alias t='tmux attach -d'
 alias gcc='gcc -Wall -g'
 alias g++='g++ -Wall -g'
-alias info='info --vi-keys'
 alias df='df -h'
 alias wget-m='wget -nd -np -p -k -m'
 alias less="less -iXF"
-alias s="screen -DR"
-alias 528='iconv -f big5 -t utf8'
-alias g='grep --mmap -EHin --colour=auto'
+alias s="screen -DRU"
+alias youtube-dl="youtube-dl -nt"
 
 # code hacking
 alias chromium="cd /Users/a2n/labs/chromium/src/chromium"
-alias screen="screen -U"
 
 # bashrc secret
 if [ -r ~/.bashrc_secret ]; then
     . ~/.bashrc_secret
+fi
+
+# git completion
+if [ -r ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
 fi
 
 # Platform dependency
@@ -51,12 +42,32 @@ else
 fi
 
 if ($MACOS); then
+    alias g='grep --mmap -EHin --colour=auto'
     alias top='top -o cpu'
     alias ls='ls -GF'
+    alias 528='iconv -f BIG-5 -t UTF-8'
     export LSCOLORS="exfxcxdxbxegedabagacad"
+    export LC_ALL="zh_TW.UTF-8"
+    export LANG="zh_TW.UTF-8"
+    export LC_CTYPE="zh_TW.UTF-8"
+    export PATH=$PATH:/Users/a2n/Downloads/android-sdk-macosx/platform-tools
 else
+    alias g='grep --mmap -EHin --color=auto'
+    alias top='top -o -vsize -O -cpu'
     alias ls='ls --color=auto'
+    alias 528='iconv -f big5 -t utf8'
     export LS_COLORS="di=01;36"
+    export LC_ALL="C"
+    export LANG="C"
+    export LC_CTYPE="C"
+
+# apt-{get, cache}
+    alias agi="apt-get install"
+    alias agu="apt-get update"
+    alias agup="apt-get upgrade"
+    alias agr='apt-get remove'
+    alias acs="apt-cache search"
+    alias acsh="apt-cache show"
 fi
 
 # @fn function gr()
@@ -86,4 +97,11 @@ function ns()
     grep -v "127.0.0.1" |
     awk '{ print $6 }' |
     wc -l
+}
+
+# @fn function length()
+# @brief Count string length
+function length()
+{
+    echo $1 | wc -m
 }
